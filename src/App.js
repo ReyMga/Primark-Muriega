@@ -1,16 +1,14 @@
-import React from 'react';
-import theme from './temaConfig'
-import {ThemeProvider} from '@material-ui/core/styles';
 import './App.css';
-import Navbar from './components/NavBar'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Navbar/>
-   
+    <div className="App">
       
-    </ThemeProvider>
+      <Navbar/>
+
+    </div>
   );
 }
 
