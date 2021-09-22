@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <ItemCount stock={10} cantidad={2} initial={1}/>
+      <ItemCount stock={10} cantidad={1} initial={1}/>
       <ItemListContainer greeting="El carrito de compras está vacío"/>
     </div>
   );
