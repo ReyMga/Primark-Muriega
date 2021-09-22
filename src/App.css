@@ -8,6 +8,24 @@
   height: 10px;
 }
 
+
+
+.spanCounter{
+  width: 100px;
+  display: inline-block;
+}
+
+.btnAgregar{
+  width: 174px;
+  display: inline-block;
+  height: 44px;
+}
+
+.text{
+  font-size: 34px;
+  color: blueviolet;
+}
+
 .marginTop3{
   margin-top: 3%;
 }
