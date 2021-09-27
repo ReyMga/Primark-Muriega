@@ -13,7 +13,7 @@ const NavBar = () => {
             <Router>
                 <div>
                     <Navbar bg="dark" variant={"dark"} expand="lg">
-                        <Navbar.Brand href="#">
+                        <Navbar.Brand href="#" className="title_navBar">
                             Primark-Muriega
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />

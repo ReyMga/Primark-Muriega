@@ -71,7 +71,13 @@
   font-family: "Poppins", sans-serif;
 }
 
+.title_navBar{
+  margin: 12px;
+}
 
+.collapsed{
+  margin-right: 9px;
+}
 
 body .container {
   display: flex;
