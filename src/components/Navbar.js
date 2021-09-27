@@ -31,7 +31,6 @@ const NavBar = () => {
 
                         </Navbar.Collapse>
                     </Navbar>
-                    <ItemListContainer/>
                 </div>
             </Router>
         )
