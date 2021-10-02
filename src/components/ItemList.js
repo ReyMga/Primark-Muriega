@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Item from "./Item";
-import { getItems } from "../Services";
 
-const ItemList = () => {
-  const [items, setItems] = useState([]);
-  useEffect(async () => {
-    const _items = await getItems();
-    setItems(_items);
-  }, []);
-
+const ItemList = ({items}) => {
   return (
-    <div>
-      {items.map((item) => (
+    <div style={{display: 'flex'}}>
+      {items?.map((item) => (
         <Item item={item} />
       ))}
     </div>
