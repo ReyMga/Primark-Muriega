@@ -200,4 +200,10 @@ body .container .card .box .content a:hover {
 }
 
 
+.containerFlex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 

@@ -1,10 +1,12 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
-import ItemListContainer from "./ItemListContainer";
+import { BrowserRouter as Router, Route, Switch,useHistory } from "react-router-dom";
+import "../App.js";
 
-const NavBar = () => {
+const NavBar = ({categories, onChange}) => {
+  const history = useHistory();
   return (
     <div>
       <Navbar bg="dark" variant={"dark"} expand="lg">
@@ -18,12 +20,19 @@ const NavBar = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link as={Link} to="/inicio">
+            <Nav.Link as={Link} to="/">
               Inicio
             </Nav.Link>
-            <Nav.Link as={Link} to="/productos">
-              Productos
-            </Nav.Link>
+            <Nav>
+              <NavDropdown
+                id="nav-dropdown-dark-example"
+                title="Categorias"
+                menuVariant="dark"
+                onSelect={(event) => onChange(event, history)}
+              >
+                {categories?.map(category => <NavDropdown.Item eventKey={category.id}>{category.name}</NavDropdown.Item>)}
+              </NavDropdown>
+            </Nav>
             <Nav.Link as={Link} to="/carrito">
               Carrito
             </Nav.Link>

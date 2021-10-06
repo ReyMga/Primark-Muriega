@@ -1,15 +1,30 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import Spinner from "react-bootstrap/Spinner";
-import { getItems } from "../Services";
-
+import { getItems, getItemsByCategory } from "../Services";
+import {useLocation} from 'react-router-dom';
 const ItemListContainer = (props) => {
   const { greeting } = props;
   const [items, setItems] = useState(null);
-  useEffect(async () => {
-    const _items = await getItems();
+  let location = useLocation(); 
+
+  const getItemsToRender = async () => {
+    let _items = [];
+    if (location.pathname !== '/') {
+      let selectedCategoryId = null;
+      if(location.pathname.includes('category')){
+        selectedCategoryId = location.pathname.replace('/category/', '')
+      }
+      _items = await getItemsByCategory(selectedCategoryId);
+    } else {
+      _items = await getItems();
+    }
     setItems(_items);
-  }, []);
+  };
+
+  useEffect(async () => {
+    await getItemsToRender();
+  }, [location.pathname]);
 
   return (
     <div>
