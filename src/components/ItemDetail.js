@@ -5,13 +5,12 @@ import ItemCount from "./ItemCount";
 import Spinner from "react-bootstrap/Spinner";
 
 const Item = ({ item }) => {
-  const [quantity, setQuantity] = useState();
-  const onChange = (count) => {
-    setQuantity(count);
+  const [cartState, setCartState] = useState();
+  const addToCart = () => {
+    alert("Añadido de forma exitosa");
+    setCartState(true);
   };
-  console.log("====================================");
-  console.log(quantity);
-  console.log("====================================");
+
   return (
     <div style={{ display: "block"}}>
       {item && (
@@ -50,7 +49,7 @@ const Item = ({ item }) => {
           </div>
           
           <div class="card__footer">
-            <ItemCount stock={10} cantidad={1} initial={1} onChange={onChange} />
+            <ItemCount stock={10} cantidad={1} initial={1} addToCart={addToCart} cartState={cartState}/>
           </div>
         </div>
       )}
