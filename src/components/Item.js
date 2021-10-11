@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
-import ItemCount from './ItemCount';
+
 
 const Item = (props) => {
   const { id, title, description, price, imageUrl } = props.item;
@@ -25,10 +25,7 @@ const Item = (props) => {
             </div>
           </div>
         </div>
-
       </div>
-
-      <ItemCount stock={10} cantidad={1} initial={1} />
     </div>
   );
 };

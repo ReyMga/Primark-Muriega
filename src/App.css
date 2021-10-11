@@ -4,7 +4,6 @@
 
 .myCart{
   width: 10px;
-  color: white;
   height: 10px;
 }
 
@@ -85,6 +84,7 @@ body .container {
   align-items: center;
   flex-wrap: wrap;
 }
+
 
 body .container .card {
   position: relative;
@@ -206,4 +206,7 @@ body .container .card .box .content a:hover {
   flex-wrap: wrap;
 }
 
-
+.boton{
+  text-decoration:none;
+  color: #000;
+}
