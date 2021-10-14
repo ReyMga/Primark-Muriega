@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import Spinner from "react-bootstrap/Spinner";
+import { CartContext } from "./CartContext";
 
 const Item = ({ item }) => {
-  const [cartState, setCartState] = useState();
-  const addToCart = () => {
-    alert("Añadido de forma exitosa");
-    setCartState(true);
+  const { addItem, isInCart } = useContext(CartContext)
+  const isInCartItem = isInCart(item?.id);
+  console.log(isInCartItem)
+  
+  const addToCart = (quantity) => {
+    addItem(item, quantity)
   };
 
   return (
@@ -49,7 +52,7 @@ const Item = ({ item }) => {
           </div>
           
           <div class="card__footer">
-            <ItemCount stock={10} cantidad={1} initial={1} addToCart={addToCart} cartState={cartState}/>
+            <ItemCount stock={10} cantidad={1} initial={1} addToCart={addToCart} cartState={isInCartItem}/>
           </div>
         </div>
       )}

@@ -204,9 +204,11 @@ body .container .card .box .content a:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin:2%;
 }
 
 .boton{
   text-decoration:none;
   color: #000;
 }
+

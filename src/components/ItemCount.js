@@ -35,7 +35,7 @@ const ItemCount = ({
       <br />
       {!cartState ? (
         <button type="button" class="btn btn-outline-warning btnAgregar">
-          <p class="link-dark" className="boton" onClick={addToCart}>
+          <p class="link-dark" className="boton" onClick={() => addToCart(count)}>
             Agregar al carrito
           </p>
         </button>
