@@ -212,3 +212,20 @@ body .container .card .box .content a:hover {
   color: #000;
 }
 
+.ml5{
+  margin-left: 5px;
+}
+
+.alert{
+  background-color: transparent!important;
+  color: #000!important;
+}
+
+.botonContinuar{
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.botonVolver{
+  margin-left: 5%;
+}

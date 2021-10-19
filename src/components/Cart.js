@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Button } from "react-bootstrap";
 import "../App.css";
+import AlertDismissible from './Alert';
 
 const Cart = () => {
   const { cartItems, removeItem, clear } = useContext(CartContext);
+  debugger
   return (
     <div>
-      <h3>{cartItems.length > 0 ? "" : "No items"}</h3>
+      <h3>{cartItems.length > 0 ? "" : <AlertDismissible/>}</h3>
       {cartItems.length > 0 && (
         <Button variant="primary" onClick={clear}>
           Eliminar todos{" "}

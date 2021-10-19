@@ -1,12 +1,19 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import { BrowserRouter as Router, Route, Switch,useHistory } from "react-router-dom";
 import "../App.js";
+import {CartContext} from './CartContext';
+
 
 const NavBar = ({categories, onChange}) => {
   const history = useHistory();
+  const { cartItems} = useContext(CartContext);
+  debugger
+  let cantidad= 0; 
+  cartItems.forEach(item => cantidad = cantidad + item.quantity )
+
   return (
     <div>
       <Navbar bg="dark" variant={"dark"} expand="lg">
@@ -34,9 +41,9 @@ const NavBar = ({categories, onChange}) => {
               </NavDropdown>
             </Nav>
             <Nav.Link as={Link} to="/carrito">
-              Carrito
+            <CartWidget cantidad={cantidad} />
             </Nav.Link>
-            <CartWidget cantidad={4} />
+             
           </Nav>
         </Navbar.Collapse>
       </Navbar>

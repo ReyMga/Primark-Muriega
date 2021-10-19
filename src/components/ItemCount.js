@@ -24,21 +24,26 @@ const ItemCount = ({
     }
   };
 
-
   return (
     <>
-      <ButtonGroup size="lg" className="mb-2" variant="secondary">
-        <i class="bi bi-dash-circle-fill" onClick={handlerRestar}></i>
-        <span className="spanCounter">{count} </span>
-        <i class="bi bi-plus-circle-fill" onClick={onAdd}></i>
-      </ButtonGroup>
-      <br />
       {!cartState ? (
-        <button type="button" class="btn btn-outline-warning btnAgregar">
-          <p class="link-dark" className="boton" onClick={() => addToCart(count)}>
-            Agregar al carrito
-          </p>
-        </button>
+        <>
+          <ButtonGroup size="lg" className="mb-2" variant="secondary">
+            <i class="bi bi-dash-circle-fill" onClick={handlerRestar}></i>
+            <span className="spanCounter">{count} </span>
+            <i class="bi bi-plus-circle-fill" onClick={onAdd}></i>
+          </ButtonGroup>
+          <br />
+          <button type="button" class="btn btn-outline-warning btnAgregar">
+            <p
+              class="link-dark"
+              className="boton"
+              onClick={() => addToCart(count)}
+            >
+              Agregar al carrito
+            </p>
+          </button>
+        </>
       ) : (
         <button type="button" class="btn btn-outline-warning btnAgregar">
           <Link to="/carrito" class="link-dark" className="boton">

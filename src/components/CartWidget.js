@@ -1,10 +1,11 @@
 import React from 'react'
-
+import { BsCart3 } from "react-icons/bs";
 
 const CartWidget = ({cantidad}) => {
     return (
         <div className="marginTop3">
-            <i className="fab fa-opencart myCart" ></i> <span className="myCart">{cantidad}</span>
+            <BsCart3/> 
+            {cantidad > 0 && <span className="myCart ml5" >{cantidad}</span>}
         </div>
     )
 }

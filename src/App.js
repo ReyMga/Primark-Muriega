@@ -30,7 +30,7 @@ function App() {
           <Navbar categories={categories} onChange={onChange} />
           <Switch>
             <Route exact path="/">
-              <ItemListContainer greeting="El carrito de compras está vacío" />
+              <ItemListContainer  />
             </Route>
             {/*
               <Route path="/productos" component={ItemListContainer} />
