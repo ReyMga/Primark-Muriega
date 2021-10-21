@@ -10,7 +10,6 @@ import {CartContext} from './CartContext';
 const NavBar = ({categories, onChange}) => {
   const history = useHistory();
   const { cartItems} = useContext(CartContext);
-  debugger
   let cantidad= 0; 
   cartItems.forEach(item => cantidad = cantidad + item.quantity )
 

@@ -16,7 +16,7 @@ const ItemListContainer = (props) => {
         selectedCategoryId = location.pathname.replace('/category/', '')
       }
       _items = await getItemsByCategory(selectedCategoryId);
-    } else {
+    } else {   
       _items = await getItems();
     }
     setItems(_items);

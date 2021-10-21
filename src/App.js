@@ -10,6 +10,7 @@ import Cart from "./components/Cart";
 import CartProvider from "./components/CartContext";
 
 
+
 function App() {
   const [categories, setCategories] = useState(null);
   

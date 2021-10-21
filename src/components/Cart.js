@@ -6,7 +6,6 @@ import AlertDismissible from './Alert';
 
 const Cart = () => {
   const { cartItems, removeItem, clear } = useContext(CartContext);
-  debugger
   return (
     <div>
       <h3>{cartItems.length > 0 ? "" : <AlertDismissible/>}</h3>
