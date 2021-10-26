@@ -1,7 +1,7 @@
-# 🎞🕶***Primark eCommerce***🎥🎬
+# **Primark eCommerce**
 
 
-## Desarrolle una aplicación eCommerce en [React].
+## Desarrolle una aplicación eCommerce en React.
 <br>
 
 
