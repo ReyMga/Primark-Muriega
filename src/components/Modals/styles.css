@@ -1,0 +1,46 @@
+.close {
+  width: 6%;
+}
+
+.form {
+  font-size: 13px;
+  margin: 10px;
+}
+
+.form > input {
+  font-family: "Urbanist", sans-serif;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  width: 100%;
+  padding: 4px;
+  margin-top: 3px;
+  border: solid 1px darkgrey;
+  border-radius: 6px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.modal-content {
+  padding-top: 16px;
+  padding-left: 16px;
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: 2.5;
+}
+
+.modal-content {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8dc26f,
+    #76b852
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8dc26f,
+    #76b852
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
