@@ -1,29 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap");
+
 .App {
   text-align: center;
 }
 
-.myCart{
+.myCart {
   width: 10px;
   height: 10px;
 }
 
-.spanCounter{
+.spanCounter {
   width: 100px;
   display: inline-block;
 }
 
-.btnAgregar{
+.btnAgregar {
   width: 174px;
   display: inline-block;
   height: 44px;
 }
 
-.text{
+.text {
   font-size: 34px;
   color: blueviolet;
 }
 
-.marginTop3{
+.marginTop3 {
   margin-top: 3%;
 }
 
@@ -62,7 +64,6 @@
   }
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -70,11 +71,11 @@
   font-family: "Poppins", sans-serif;
 }
 
-.title_navBar{
+.title_navBar {
   margin: 12px;
 }
 
-.collapsed{
+.collapsed {
   margin-right: 9px;
 }
 
@@ -84,7 +85,6 @@ body .container {
   align-items: center;
   flex-wrap: wrap;
 }
-
 
 body .container .card {
   position: relative;
@@ -99,7 +99,7 @@ body .container .card {
 }
 
 body .container .card:nth-child(1) .box .content a {
-  background: #f1c668 ;
+  background: #f1c668;
 }
 
 body .container .card .box {
@@ -143,18 +143,25 @@ body .container .card .box .content h2 {
   color: rgba(255, 255, 255, 0.1);
 }
 
-.id{
+.id {
   display: none;
 }
 
-body{
-  background: #3E5151;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+body {
+  background: #3e5151; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #decba4,
+    #3e5151
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #decba4,
+    #3e5151
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-body .container .card .box .content h3{
+body .container .card .box .content h3 {
   font-size: 1.8rem;
   color: rgb(216, 126, 23);
   z-index: 1;
@@ -184,70 +191,95 @@ body .container .card .box .content a {
 }
 body .container .card .box .content a:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-  background: #fe8c00;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f83600, #fe8c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #fe8c00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f83600,
+    #fe8c00
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f83600,
+    #fe8c00
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #000;
 }
 
-
-.spinner{
-  position: 'absolute';
-  top: '50%';
-  left: '50%';
-  transform: 'translate(-50%)';
+.spinner {
+  position: "absolute";
+  top: "50%";
+  left: "50%";
+  transform: "translate(-50%)";
   margin-top: 10%;
 }
 
-
-.containerFlex{
+.containerFlex {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin:2%;
+  margin: 2%;
 }
 
-.boton{
-  text-decoration:none;
+.boton {
+  text-decoration: none;
   color: #000;
 }
 
-.ml5{
+.ml5 {
   margin-left: 5px;
 }
 
-.alert{
-  background-color: transparent!important;
-  color: #000!important;
+.alert {
+  background-color: transparent !important;
+  color: #000 !important;
 }
 
-.botonContinuar{
+.botonContinuar {
   text-decoration: none;
   color: aliceblue;
 }
 
-.botonVolver{
+.botonVolver {
   margin-left: 5%;
 }
 
-label{
+label {
   width: 110px;
   display: inline-block;
 }
 
-.error{
+.error {
   color: red;
-  margin-left:5px;
+  margin-left: 5px;
   display: inline-block;
   font-size: 12px;
 }
 
-.error-mail{
+.error-mail {
   color: red;
   display: inline-block;
   font-size: 12px;
 }
 
-.close{
+.close {
   width: 6%;
+}
+
+.form {
+  font-size: 13px;
+  margin: 10px;
+}
+
+.form > input {
+  font-family: "Urbanist", sans-serif;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  width: 100%;
+  padding: 4px;
+  margin-top: 3px;
+  border: solid 1px darkgrey;
+  border-radius: 6px;
+}
+
+.label{
+  font-weight: bold;
 }

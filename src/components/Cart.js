@@ -133,13 +133,14 @@ const Cart = () => {
           Terminar compra
         </Button>
       )}
-      <Modal show={show} onHide={handleClose} animation={false}>
+      <Modal show={show} onHide={handleClose} animation={false} >
         <Modal.Header closeButton>
           <Modal.Title>Datos del Comprador</Modal.Title>
         </Modal.Header>
 
-        <div style={{ margin: "10px" }}>
+        <div className='form'>
           <label for="email">Email</label>
+          <br/>
           <input
             type="email"
             id="email"
@@ -148,15 +149,16 @@ const Cart = () => {
             value={inputValue.email}
             maxLength="40"
           />
+          <br/>
           <span className="error">
             {dirty && inputValue.email.length === 0 && (
               <span>No puede estar vacio</span>
             )}
           </span>
           <span className="error">
-            {dirty && !validateEmail(inputValue.email) && <span>Ingrese un email válido</span>}
+            {dirty && !validateEmail(inputValue.email) && <span >Ingrese un email válido</span>}
           </span>
-          <br></br> <br></br>
+          <br/>
           <label for="emailValidado">Repetir Email</label>
           <input
             type="text"
@@ -178,8 +180,8 @@ const Cart = () => {
                 <span>Los mails no concuerdan</span>
               )}
           </span>
-          <br></br> <br></br>
-          <label for="phone">Telefono</label>
+          <br/>
+          <label for="phone">Teléfono</label>
           <input
             type="phone"
             id="phone"
