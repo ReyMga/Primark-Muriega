@@ -16,7 +16,7 @@ export async function getItems() {
   try {
     let querySnapshot = await itemCollection.get();
     if (querySnapshot.size === 0) {
-      console.log("No Hay resultados");
+      return [];
     }
     return querySnapshot.docs.map((doc) => doc.data());
   } catch(error) {
@@ -36,7 +36,7 @@ export async function getCategories() {
   try {
     let querySnapshot = await categoryCollection.get();
     if (querySnapshot.size === 0) {
-      console.log("No Hay resultados");
+     return [];
     }
     return querySnapshot.docs.map((doc) => doc.data());
   } catch(error) {
@@ -52,4 +52,10 @@ export async function getCategory(id) {
 export async function getItemsByCategory(categoryId) {
   const products = await getItems();
   return products.filter((x) => x.categoryId == categoryId);;
+}
+
+export async function createOrder(order) {
+  const db = getFirestore();
+  const docRef = await db.collection("Order").add(order)
+  return docRef.id;
 }

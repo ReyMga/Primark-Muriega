@@ -229,3 +229,25 @@ body .container .card .box .content a:hover {
 .botonVolver{
   margin-left: 5%;
 }
+
+label{
+  width: 110px;
+  display: inline-block;
+}
+
+.error{
+  color: red;
+  margin-left:5px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.error-mail{
+  color: red;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.close{
+  width: 6%;
+}

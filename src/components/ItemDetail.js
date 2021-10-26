@@ -8,7 +8,6 @@ import { CartContext } from "./CartContext";
 const Item = ({ item }) => {
   const { addItem, isInCart } = useContext(CartContext)
   const isInCartItem = isInCart(item?.id);
-  console.log(isInCartItem)
   
   const addToCart = (quantity) => {
     addItem(item, quantity)
