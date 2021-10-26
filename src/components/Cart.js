@@ -4,7 +4,7 @@ import { Button, Modal } from "react-bootstrap";
 import "../App.css";
 import AlertDismissible from "./Alert";
 import { createOrder } from "../Services";
-import SuccessFormModal from './Modals/SuccessFormModal'
+import SuccessFormModal from "./Modals/SuccessFormModal";
 import { useHistory } from "react-router-dom";
 
 const formatDate = (date) =>
@@ -22,7 +22,10 @@ function validateEmail(email) {
 const Cart = () => {
   const history = useHistory();
   const { cartItems, removeItem, clear } = useContext(CartContext);
-  const [orderGenerated, setOrderGenerated] = useState({generated: false, orderId: null});
+  const [orderGenerated, setOrderGenerated] = useState({
+    generated: false,
+    orderId: null,
+  });
   const [successModalShow, setSuccessModalShow] = useState(false);
   const [show, setShow] = useState(false);
   const [dirty, setDirty] = useState(false);
@@ -39,8 +42,8 @@ const Cart = () => {
     setSuccessModalShow(false);
     localStorage.clear();
     clear();
-    history.push('/')
-  }
+    history.push("/");
+  };
   const isFormValid = () => {
     let valid = true;
     for (const property in inputValue) {
@@ -58,7 +61,6 @@ const Cart = () => {
       valid = false;
     }
     return valid;
-    
   };
   const handleSend = async () => {
     setDirty(true);
@@ -86,7 +88,7 @@ const Cart = () => {
     };
 
     const orderId = await createOrder(order);
-    setOrderGenerated({generated: true, orderId: orderId});
+    setOrderGenerated({ generated: true, orderId: orderId });
     setSuccessModalShow(true);
   };
 
@@ -114,7 +116,7 @@ const Cart = () => {
             <div class="card__body">
               <div class="half">
                 <div class="featured_text">
-                  {item?.title}
+                  <h5 class="min-height-50"> {item?.title} </h5>
                   <div class="image">
                     <img
                       src={item?.imageUrl}
@@ -125,10 +127,16 @@ const Cart = () => {
                 </div>
               </div>
               <div class="half">
-                <div class="description">
-                  <h4 style={{ marginRight: "30px" }}>
+                <div className="descriptionCart">
+                  <h6 style={{ marginRight: "30px" }}>
+                    Cantidad: {Number(item.quantity)}
+                  </h6>
+                  <h6 style={{ marginRight: "30px" }}>
+                    Precio unitario: {Number(item.price)}
+                  </h6>
+                  <h6 style={{ marginRight: "30px" }}>
                     Subtotal: {Number(item.quantity) * Number(item.price)}{" "}
-                  </h4>
+                  </h6>
                 </div>
               </div>
               <Button variant="primary" onClick={() => removeItem(item.id)}>
@@ -143,14 +151,14 @@ const Cart = () => {
           Terminar compra
         </Button>
       )}
-      <Modal show={show} onHide={handleClose} animation={false} >
+      <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>Datos del Comprador</Modal.Title>
         </Modal.Header>
 
-        <div className='form'>
+        <div className="form">
           <label for="email">Email</label>
-          <br/>
+          <br />
           <input
             type="email"
             id="email"
@@ -159,18 +167,18 @@ const Cart = () => {
             value={inputValue.email}
             maxLength="40"
           />
-
           <span className="error">
             {dirty && inputValue.email.length === 0 && (
               <span>No puede estar vacio</span>
             )}
           </span>
-
           <span className="error">
-            {dirty && !validateEmail(inputValue.email) && <span >Ingrese un email válido</span>}
+            {dirty && !validateEmail(inputValue.email) && (
+              <span>Ingrese un email válido</span>
+            )}
           </span>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <label for="emailValidado">Repetir Email</label>
           <input
             type="text"
@@ -192,7 +200,7 @@ const Cart = () => {
                 <span>Los mails no concuerdan</span>
               )}
           </span>
-          <br/>
+          <br />
           <label for="phone">Teléfono</label>
           <input
             type="phone"
@@ -232,7 +240,13 @@ const Cart = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-      {orderGenerated.generated && <SuccessFormModal id={orderGenerated.orderId} show={successModalShow} handleClose={handleSuccessClose} />}
+      {orderGenerated.generated && (
+        <SuccessFormModal
+          id={orderGenerated.orderId}
+          show={successModalShow}
+          handleClose={handleSuccessClose}
+        />
+      )}
     </div>
   );
 };
