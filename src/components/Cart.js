@@ -4,6 +4,8 @@ import { Button, Modal } from "react-bootstrap";
 import "../App.css";
 import AlertDismissible from "./Alert";
 import { createOrder } from "../Services";
+import SuccessFormModal from './Modals/SuccessFormModal'
+import { useHistory } from "react-router-dom";
 
 const formatDate = (date) =>
   date.getDate().toString().padStart(2, 0) +
@@ -18,7 +20,10 @@ function validateEmail(email) {
 }
 
 const Cart = () => {
+  const history = useHistory();
   const { cartItems, removeItem, clear } = useContext(CartContext);
+  const [orderGenerated, setOrderGenerated] = useState({generated: false, orderId: null});
+  const [successModalShow, setSuccessModalShow] = useState(false);
   const [show, setShow] = useState(false);
   const [dirty, setDirty] = useState(false);
   const [inputValue, setInputValue] = useState({
@@ -30,6 +35,12 @@ const Cart = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleSuccessClose = () => {
+    setSuccessModalShow(false);
+    localStorage.clear();
+    clear();
+    history.push('/')
+  }
   const isFormValid = () => {
     let valid = true;
     for (const property in inputValue) {
@@ -75,9 +86,8 @@ const Cart = () => {
     };
 
     const orderId = await createOrder(order);
-
-    //Modal se genero su orden con este nro de ID {orderId}
-    //Borrar LocalStorage
+    setOrderGenerated({generated: true, orderId: orderId});
+    setSuccessModalShow(true);
   };
 
   const onChangeHandler = (event) => {
@@ -149,15 +159,17 @@ const Cart = () => {
             value={inputValue.email}
             maxLength="40"
           />
-          <br/>
+
           <span className="error">
             {dirty && inputValue.email.length === 0 && (
               <span>No puede estar vacio</span>
             )}
           </span>
+
           <span className="error">
             {dirty && !validateEmail(inputValue.email) && <span >Ingrese un email válido</span>}
           </span>
+          <br/>
           <br/>
           <label for="emailValidado">Repetir Email</label>
           <input
@@ -220,6 +232,7 @@ const Cart = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+      {orderGenerated.generated && <SuccessFormModal id={orderGenerated.orderId} show={successModalShow} handleClose={handleSuccessClose} />}
     </div>
   );
 };
